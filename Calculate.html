@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Calculate.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #cc7832;}
+.s6 { color: #6a8759;}
+.s7 { color: #808080;}
+.s8 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Calculate.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;html&gt;</span>
+    <span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">http-equiv</span><span class="s3">=&quot;Content-Type&quot; </span><span class="s2">content</span><span class="s3">=&quot;text/html; charset=utf-8&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;title&gt;</span><span class="s4">无标题</span><span class="s0">&lt;/title&gt;</span>
+        <span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot;</span><span class="s0">&gt;</span>
+        <span class="s5">function </span><span class="s1">sum(obj) {</span>
+<span class="s5">var </span><span class="s1">z = document.getElementById(</span><span class="s6">&quot;z&quot;</span><span class="s4">)</span><span class="s5">;       </span><span class="s7">&lt;!-- 挂牌价 --&gt;</span>
+            <span class="s5">var </span><span class="s1">a = document.getElementById(</span><span class="s6">&quot;a&quot;</span><span class="s4">)</span><span class="s5">;   </span><span class="s7">&lt;!-- 网签价 --&gt;</span>
+            <span class="s5">var </span><span class="s1">b = document.getElementById(</span><span class="s6">&quot;b&quot;</span><span class="s4">)</span><span class="s5">;   </span><span class="s7">&lt;!-- 贷款 --&gt;</span>
+            <span class="s5">var </span><span class="s1">c = document.getElementById(</span><span class="s6">&quot;c&quot;</span><span class="s4">)</span><span class="s5">;   </span><span class="s7">&lt;!-- 还款时间 --&gt;</span>
+            <span class="s5">var </span><span class="s1">n = document.getElementById(</span><span class="s6">&quot;n&quot;</span><span class="s4">)</span><span class="s5">;   </span><span class="s7">&lt;!-- 税费 --&gt;</span>
+<span class="s1">n.value=(parseInt(a.value)-</span><span class="s8">190</span><span class="s4">)*</span><span class="s8">0.05046</span><span class="s4">+(parseInt(a.value)/</span><span class="s8">2</span><span class="s4">*</span><span class="s8">0.0192</span><span class="s4">)+parseInt(a.value)*</span><span class="s8">0.014425</span><span class="s4">+parseInt(z.value)*</span><span class="s8">0.018</span>
+<span class="s1">all.value=parseInt(z.value)+parseInt(n.value)</span><span class="s5">;</span>
+<span class="s7">// if(a.value!='')</span>
+<span class="s7">// {</span>
+<span class="s7">// y.value=parseInt(a.value);</span>
+<span class="s7">// h.value=parseInt(z.value)-parseInt(a.value);</span>
+<span class="s7">// }</span>
+<span class="s5">if</span><span class="s4">(a.value!=</span><span class="s6">''</span><span class="s4">&amp;&amp;b.value!=</span><span class="s6">''</span><span class="s4">)</span>
+<span class="s4">{</span>
+<span class="s1">y.value=all.value-parseInt(b.value)</span><span class="s5">;</span>
+<span class="s4">}</span>
+<span class="s5">if</span><span class="s4">(a.value!=</span><span class="s6">''</span><span class="s4">&amp;&amp;b.value!=</span><span class="s6">''</span><span class="s4">&amp;&amp;c.value!=</span><span class="s6">''</span><span class="s4">)</span>
+<span class="s4">{</span>
+<span class="s1">y.value=all.value-parseInt(b.value)</span><span class="s5">;</span>
+<span class="s1">h.value=(</span><span class="s8">0.0539</span><span class="s4">/</span><span class="s8">12</span><span class="s4">*parseInt(b.value)*</span><span class="s8">10000</span><span class="s4">*(</span><span class="s8">0.0539</span><span class="s4">/</span><span class="s8">12</span><span class="s4">+</span><span class="s8">1</span><span class="s4">)**parseInt(c.value))/((</span><span class="s8">1</span><span class="s4">+</span><span class="s8">0.0539</span><span class="s4">/</span><span class="s8">12</span><span class="s4">)**parseInt(c.value)-</span><span class="s8">1</span><span class="s4">)</span><span class="s5">;</span>
+<span class="s1">x.value=h.value*</span><span class="s8">360</span><span class="s4">/</span><span class="s8">10000</span><span class="s5">;</span>
+<span class="s4">}</span>
+        <span class="s4">}</span>
+        <span class="s0">&lt;/script&gt;</span>
+    <span class="s0">&lt;/head&gt;</span>
+    <span class="s0">&lt;body&gt;</span>
+<span class="s4">挂牌价：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;z&quot; </span><span class="s2">onkeyup</span><span class="s3">=&quot;</span><span class="s1">sum(</span><span class="s5">this</span><span class="s4">)</span><span class="s5">;</span><span class="s3">&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">网签价：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;a&quot; </span><span class="s2">onkeyup</span><span class="s3">=&quot;</span><span class="s1">sum(</span><span class="s5">this</span><span class="s4">)</span><span class="s5">;</span><span class="s3">&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">贷款：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;b&quot; </span><span class="s2">onkeyup</span><span class="s3">=&quot;</span><span class="s1">sum(</span><span class="s5">this</span><span class="s4">)</span><span class="s5">;</span><span class="s3">&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">还款时间(月）：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;c&quot; </span><span class="s2">onkeyup</span><span class="s3">=&quot;</span><span class="s1">sum(</span><span class="s5">this</span><span class="s4">)</span><span class="s5">;</span><span class="s3">&quot; </span><span class="s0">/&gt;</span>
+
+
+<span class="s4">总价：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">='text' </span><span class="s2">id</span><span class="s3">='all' </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">border</span><span class="s4">:</span><span class="s8">0</span><span class="s3">px solid white</span><span class="s5">; </span><span class="s2">width</span><span class="s4">:</span><span class="s8">50</span><span class="s3">px&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">过户首付：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">='text' </span><span class="s2">id</span><span class="s3">='y' </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">border</span><span class="s4">:</span><span class="s8">0</span><span class="s3">px solid white</span><span class="s5">; </span><span class="s2">width</span><span class="s4">:</span><span class="s8">50</span><span class="s3">px&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">税费+中介费</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">='text' </span><span class="s2">id</span><span class="s3">='n' </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">border</span><span class="s4">:</span><span class="s8">0</span><span class="s3">px solid white</span><span class="s5">; </span><span class="s2">width</span><span class="s4">:</span><span class="s8">30</span><span class="s3">px&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">月供：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">='text' </span><span class="s2">id</span><span class="s3">='h' </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">border</span><span class="s4">:</span><span class="s8">0</span><span class="s3">px solid white</span><span class="s5">; </span><span class="s2">width</span><span class="s4">:</span><span class="s8">50</span><span class="s3">px&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">还款总额：</span>
+<span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">='text' </span><span class="s2">id</span><span class="s3">='x' </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">border</span><span class="s4">:</span><span class="s8">0</span><span class="s3">px solid white</span><span class="s5">; </span><span class="s2">width</span><span class="s4">:</span><span class="s8">50</span><span class="s3">px&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/body&gt;</span>
+
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
